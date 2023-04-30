@@ -1,27 +1,28 @@
 import Head from "next/head";
-import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 /* 
-  ⭐️point: SSR 설명
-    - SSR (Server Side Render)
-    - 서버가 그린다
-    - 그린다: 데이터를 가져와서 그린다
-    - 서버가 그린다: 서버가 데이터를 가져와서 그린다
-    - SSR을 담당하는 함수 -> getServerSideProps
-      - 서버에서 데이터를 가지고 오고 페이지로 전달하는 역할을 한다.
+  ⭐️point: SSG(Static-Site Generation)설명
+    - 정적인 사이트를 생성한다
+    - 생성한다: 데이터를 가져와서 그려둔다
+    - 정적인 사이트를 생성한다: 정적인 사이트를 데이터를 가져와서 그려 둔다
+    - 개발 환경에서는 SSG가 제대로 동작하지 않는다.
+      - 개발 환경에서는 SSR처럼 동작한다.
+      - yarn build -> yarn start로 빌트한 파일을 실행해야 한다.
+    - SSG을 담당하는 함수
+      - getStaticProps(with getStaticPaths)
+    - 정리 하면
+      - 블로그와 같이 변경되기 전에 계속 같은 내용이라면 build시 static하게 서버에서 만들어 놓으면 서버에 부하가 훨씬 덜하게 서빙할 수 있다.
 */
-export async function getServerSideProps() {
-  console.log("--- server"); // 여기 로그는 서버를 실행한 terminal에서 보인다.(서버 실행 방법 두 가지 yarn dev, yarn star)
+export async function getStaticProps() {
+  console.log("--- server");
   return {
     //⭐️ step-1
     props: { time: new Date().toISOString() },
   };
 }
 
-export default function Home({ time }) {
-  console.log("time: ", time);
-  //⭐️ step-2
+export default function SSG({ time }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -31,13 +32,7 @@ export default function Home({ time }) {
 
       <main>
         <h1 className="title">{time}</h1>
-        <label>ssr 예시 페이지 입니다.</label>
-        <h1>
-          <Link href="/CSR">CSR 예시 페이지로</Link>
-        </h1>
-        <h1>
-          <Link href="/SSG">SSG 예시 페이지로</Link>
-        </h1>
+        <label>csr 예시 페이지 입니다.</label>
       </main>
 
       <footer>
