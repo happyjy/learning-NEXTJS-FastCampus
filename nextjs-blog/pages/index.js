@@ -38,6 +38,9 @@ export default function Home({ time }) {
         <h1>
           <Link href="/SSG">SSG 예시 페이지로</Link>
         </h1>
+        <h1>
+          <Link href="/ISR">ISR 예시 페이지로</Link>
+        </h1>
       </main>
 
       <footer>
