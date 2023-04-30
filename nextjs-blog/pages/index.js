@@ -3,12 +3,13 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 /* 
-  ⭐️point: SSR 설명 - 서버에서 데이터를 가지고 오고 페이지로 전달하는 역할을 한다.
+  ⭐️point: SSR 설명
     - SSR (Server Side Render)
     - 서버가 그린다
     - 그린다: 데이터를 가져와서 그린다
     - 서버가 그린다: 서버가 데이터를 가져와서 그린다
     - SSR을 담당하는 함수 -> getServerSideProps
+      - 서버에서 데이터를 가지고 오고 페이지로 전달하는 역할을 한다.
 */
 export async function getServerSideProps() {
   console.log("--- server");
