@@ -1,29 +1,43 @@
 This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
-- Next.js 프로젝트 띄워보기
+# Part1. 2-1. Next.js 소개 및 환경 설정
 
-  ````
-  npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter" ```
+## 학습 branch
+
+```
+part1.2-1_Next.js소개_및_환경설정
+```
+
+## Next.js 프로젝트 띄워보기
+
+```
+npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"
 
 
-  ````
+```
 
-- package 설치
+## package 설치
 
-  ```
-  yarn
+```
+yarn
 
-  ```
+```
 
-- project 실행
+## project 실행
 
-  ```
+```
 
-  yarn dev
+yarn dev
 
-  ```
+```
 
 # Part2. 1-2. Next.js 기본 2(Data Fetching)
+
+## 학습 branch
+
+```
+Part2.1-2_Next.js_기본_2(Data_Fetching)
+```
 
 ## DATA Fetching
 
@@ -33,6 +47,12 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 - 필요에 맞춰서-> SSR은 서버 부하 / SSG + ISR
 
 # Part2. 1-3. Next.js 기본 3(Pages_Layout_Image)
+
+## 학습 branch
+
+```
+Part2.1-3_Next.js_기본_3(Pages_Layout_Image)
+```
 
 ## Pre-renders 와 SEO
 
