@@ -32,6 +32,18 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
   - [slug](#slug)
   - [slug](#slug)
   - [Routing 요약 정리](#routing-%EC%9A%94%EC%95%BD-%EC%A0%95%EB%A6%AC)
+- [Part2. 1-6. Next.js 기본 5Shallow Routing](#part2-1-6-nextjs-%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB-5shallow-routing)
+  - [Dynamic Routes](#dynamic-routes)
+    - [query가 있다면?](#query%EA%B0%80-%EC%9E%88%EB%8B%A4%EB%A9%B4)
+    - [궁금증?!](#%EA%B6%81%EA%B8%88%EC%A6%9D)
+  - [다중 슬러그](#%EB%8B%A4%EC%A4%91-%EC%8A%AC%EB%9F%AC%EA%B7%B8)
+  - [다중 슬러그](#%EB%8B%A4%EC%A4%91-%EC%8A%AC%EB%9F%AC%EA%B7%B8)
+  - [옵셔널 slug](#%EC%98%B5%EC%85%94%EB%84%90-slug)
+  - [Routing 방법](#routing-%EB%B0%A9%EB%B2%95)
+  - [Shallow Routing](#shallow-routing)
+  - [상태는 유지하면서 URL 만 바꾸고 싶은 경우?](#%EC%83%81%ED%83%9C%EB%8A%94-%EC%9C%A0%EC%A7%80%ED%95%98%EB%A9%B4%EC%84%9C-url-%EB%A7%8C-%EB%B0%94%EA%BE%B8%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EA%B2%BD%EC%9A%B0)
+  - [url을 바꾸는 3가지 방식](#url%EC%9D%84-%EB%B0%94%EA%BE%B8%EB%8A%94-3%EA%B0%80%EC%A7%80-%EB%B0%A9%EC%8B%9D)
+  - [Shallow Routing 정리](#shallow-routing-%EC%A0%95%EB%A6%AC)
 
 <!-- /TOC -->
 
@@ -221,3 +233,76 @@ Part2.1-3_Next.js_기본_3(Pages_Layout_Image)
 - pages/ 혹은 src/pages -> pages/ 가 우선순위, 하나만 가능
 - 프로젝트 설정 -> prettier / jsconfig.json(절대경로)
 - Slug -> 다양한 위계의 Dynamic 제공
+
+# Part2. 1-6. Next.js 기본 5(Shallow Routing)
+
+## Dynamic Routes
+
+- [slug] 값은 어떻게 활용할 것 인가?
+
+  - pages/category/[slug].js
+
+- useRouter 객체 활용!
+  ```
+   import { useRouter } from ‘next/router’
+   const router = useRouter()
+   const { slug } = router.query
+  ```
+
+### query가 있다면?
+
+- "/category/food?from=event" 이런 url이라면
+  - useRtouer().query는 아래와 같은 객체를 반환
+  - { “slug”: “food”, “from”: “event” }
+
+### 궁금증?!
+
+- query에 slug가 있다면?
+  - /category/food?slug=book
+  - ⭐️ 아래와 같이 query에 있는 book은 생략 된다.
+  - { “slug”: “food”}
+
+## 다중 슬러그
+
+- pages/[username]/[info].js
+- const { username, info } = router.query
+
+## 다중 슬러그
+
+- pages/cart/[...slug].js
+- const { slug } = router.query
+- slug는 배열
+
+## 옵셔널 slug
+
+- pages/cart/[...slug].js => /cart 로 접근하면 404가 뜬다.
+- pages/cart/[[...slug]].js 해주면 slug가 존재하지 않아도 받는다
+
+## Routing 방법
+
+- <Link href=”url”><a>url 로</a></Link>
+- router.push(“url”)
+
+## Shallow Routing
+
+- getServerSideProps / getStaticProps 등을 다시 실행시키지 않고,
+- 현재 상태를 잃지 않고 url을 바꾸는 방법
+
+## 상태는 유지하면서 URL 만 바꾸고 싶은 경우?
+
+- 사용자가 어떤 동작을 했고, 그 기록을 query로 남기고 싶을때
+  - query로 남기면 사용자가 새로고침을 해도 유지된다.
+- Data fetching 을 일으키고 싶지 않다면?
+
+## url을 바꾸는 3가지 방식
+
+- location.replace(“url”): 로컬 state 유지 안됨(리렌더)
+- router.push(url): 로컬 state 유지 / data fetching은 일어남
+- router.push(url, as, { shallow: true }): 로컬 state 유지 / data fetching [x]
+
+## Shallow Routing 정리
+
+- Dynamic Routes -> slug를 활용하는 방법
+- 다중 slug -> [user]/[info].js / [...slug].js
+- 옵셔널 slug -> [[...slug]].js
+- Shallow Routing -> router.push(url, undefined, {shallow:true})
