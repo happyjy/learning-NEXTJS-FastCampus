@@ -38,8 +38,8 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
     - [궁금증?!](#%EA%B6%81%EA%B8%88%EC%A6%9D)
   - [다중 슬러그 1](#%EB%8B%A4%EC%A4%91-%EC%8A%AC%EB%9F%AC%EA%B7%B8-1)
   - [다중 슬러그 2](#%EB%8B%A4%EC%A4%91-%EC%8A%AC%EB%9F%AC%EA%B7%B8-2)
-  - [옵셔널 slug](#%EC%98%B5%EC%85%94%EB%84%90-slug)
-  - [Routing 방법](#routing-%EB%B0%A9%EB%B2%95)
+    - [옵셔널 slug](#%EC%98%B5%EC%85%94%EB%84%90-slug)
+  - [Routing 방법 2가지](#routing-%EB%B0%A9%EB%B2%95-2%EA%B0%80%EC%A7%80)
   - [Shallow Routing](#shallow-routing)
   - [상태는 유지하면서 URL 만 바꾸고 싶은 경우?](#%EC%83%81%ED%83%9C%EB%8A%94-%EC%9C%A0%EC%A7%80%ED%95%98%EB%A9%B4%EC%84%9C-url-%EB%A7%8C-%EB%B0%94%EA%BE%B8%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EA%B2%BD%EC%9A%B0)
   - [url을 바꾸는 3가지 방식](#url%EC%9D%84-%EB%B0%94%EA%BE%B8%EB%8A%94-3%EA%B0%80%EC%A7%80-%EB%B0%A9%EC%8B%9D)
@@ -278,10 +278,10 @@ Part2.1-3_Next.js_기본_3(Pages_Layout_Image)
 - pages/cart/[...slug].js => /cart 로 접근하면 404가 뜬다.
 - pages/cart/[[...slug]].js 해주면 slug가 존재하지 않아도 받는다
 
-## Routing 방법
+## Routing 방법 2가지
 
-- <Link href=”url”><a>url 로</a></Link>
-- router.push(“url”)
+1. <Link href=”url”><a>url 로</a></Link>
+2. router.push(“url”)
 
 ## Shallow Routing
 

@@ -1,5 +1,6 @@
 import Layout from 'components/Layout'
 import SubLayout from 'components/SubLayout'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 // url -> http://localhost:3000/cart/2023/05/05
@@ -13,6 +14,9 @@ export default function CartDateSlug() {
     <>
       <h1>Cart Date Slug</h1>
       <h1>{`router.query.data Object : ${JSON.stringify(date)}`}</h1>
+      <Link href={'/cart/2023/05/06'}>23.05.06</Link>
+      <br />
+      <button onClick={() => router.push('/cart/2023/05/06')}>23/05/06</button>
     </>
   )
 }
