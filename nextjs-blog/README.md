@@ -36,8 +36,8 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
   - [Dynamic Routes](#dynamic-routes)
     - [query가 있다면?](#query%EA%B0%80-%EC%9E%88%EB%8B%A4%EB%A9%B4)
     - [궁금증?!](#%EA%B6%81%EA%B8%88%EC%A6%9D)
-  - [다중 슬러그](#%EB%8B%A4%EC%A4%91-%EC%8A%AC%EB%9F%AC%EA%B7%B8)
-  - [다중 슬러그](#%EB%8B%A4%EC%A4%91-%EC%8A%AC%EB%9F%AC%EA%B7%B8)
+  - [다중 슬러그 1](#%EB%8B%A4%EC%A4%91-%EC%8A%AC%EB%9F%AC%EA%B7%B8-1)
+  - [다중 슬러그 2](#%EB%8B%A4%EC%A4%91-%EC%8A%AC%EB%9F%AC%EA%B7%B8-2)
   - [옵셔널 slug](#%EC%98%B5%EC%85%94%EB%84%90-slug)
   - [Routing 방법](#routing-%EB%B0%A9%EB%B2%95)
   - [Shallow Routing](#shallow-routing)
@@ -262,18 +262,18 @@ Part2.1-3_Next.js_기본_3(Pages_Layout_Image)
   - ⭐️ 아래와 같이 query에 있는 book은 생략 된다.
   - { “slug”: “food”}
 
-## 다중 슬러그
+## 다중 슬러그 1
 
 - pages/[username]/[info].js
 - const { username, info } = router.query
 
-## 다중 슬러그
+## 다중 슬러그 2
 
 - pages/cart/[...slug].js
-- const { slug } = router.query
-- slug는 배열
+  - const { slug } = router.query
+  - slug는 배열
 
-## 옵셔널 slug
+### 옵셔널 slug
 
 - pages/cart/[...slug].js => /cart 로 접근하면 404가 뜬다.
 - pages/cart/[[...slug]].js 해주면 slug가 존재하지 않아도 받는다
