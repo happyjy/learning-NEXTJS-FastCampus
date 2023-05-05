@@ -9,7 +9,9 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>{children}</main>
+      <main id="main" className="main">
+        {children}
+      </main>
 
       <footer>
         <a
@@ -29,6 +31,8 @@ export default function Layout({ children }) {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+
+          border: 1px solid red;
         }
         footer {
           width: 100%;

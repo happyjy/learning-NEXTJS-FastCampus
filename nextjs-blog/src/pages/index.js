@@ -23,7 +23,7 @@ export default function Home({ time }) {
   return (
     <div>
       "file location: src/pages/index.js"
-      <main>
+      <main className="index">
         <h1 className="title">{time}</h1>
         <label>ssr 예시 페이지 입니다.</label>
         <h1>

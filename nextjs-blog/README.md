@@ -6,6 +6,7 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
   - [학습 branch](#%ED%95%99%EC%8A%B5-branch)
   - [Next.js 프로젝트 띄워보기](#nextjs-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%9D%84%EC%9B%8C%EB%B3%B4%EA%B8%B0)
   - [package 설치](#package-%EC%84%A4%EC%B9%98)
+  - [project 실행](#project-%EC%8B%A4%ED%96%89)
 - [Part2. 1-2. Next.js 기본 2Data Fetching](#part2-1-2-nextjs-%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB-2data-fetching)
   - [학습 branch](#%ED%95%99%EC%8A%B5-branch)
   - [DATA Fetching](#data-fetching)
@@ -147,6 +148,8 @@ Part2.1-3_Next.js_기본_3(Pages_Layout_Image)
 ## pages/index.js, src/pages/index.js 둘 다 있다면? 뭐가 우선순위를 가질까?
 
 - pages/index.js 우선 된다!
+- ⭐️ pages/index.js에 있던 Link의 href 주소 부분이 정상 동작하지 않는다.
+  - 정상 동작 하지 않는 부분은 src/pages/index.js이 동작해야 동작해야 한다.
 
 ## Style 이슈
 
