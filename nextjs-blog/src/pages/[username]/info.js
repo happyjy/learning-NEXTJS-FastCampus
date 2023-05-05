@@ -1,17 +1,17 @@
 import Layout from 'components/Layout'
 import SubLayout from 'components/SubLayout'
 
-// url -> http://localhost:3000/product/first-item
+// url -> http://localhost:3000/jyoon/info
 
-export default function firstItem() {
+export default function UsernameInfo() {
   return (
     <>
-      <h1>firstItem</h1>
+      <h1>UsernameInfo</h1>
     </>
   )
 }
 
-firstItem.getLayout = function getLayout(page) {
+UsernameInfo.getLayout = function getLayout(page) {
   return (
     <Layout>
       <SubLayout>{page}</SubLayout>

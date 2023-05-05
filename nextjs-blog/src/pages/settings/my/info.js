@@ -1,7 +1,9 @@
 import Layout from 'components/Layout'
 import SubLayout from 'components/SubLayout'
 
-export default function MyINfo() {
+// url -> http://localhost:3000/settings/my/info
+
+export default function MyInfo() {
   return (
     <>
       <h1>My Info</h1>
@@ -9,7 +11,7 @@ export default function MyINfo() {
   )
 }
 
-MyINfo.getLayout = function getLayout(page) {
+MyInfo.getLayout = function getLayout(page) {
   return (
     <Layout>
       <SubLayout>{page}</SubLayout>

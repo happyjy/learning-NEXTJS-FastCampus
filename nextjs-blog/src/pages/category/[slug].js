@@ -1,17 +1,17 @@
 import Layout from 'components/Layout'
 import SubLayout from 'components/SubLayout'
 
-// url -> http://localhost:3000/product/first-item
+// url -> http://localhost:3000/category/food
 
-export default function firstItem() {
+export default function CategorySlug() {
   return (
     <>
-      <h1>firstItem</h1>
+      <h1>Category Slug</h1>
     </>
   )
 }
 
-firstItem.getLayout = function getLayout(page) {
+CategorySlug.getLayout = function getLayout(page) {
   return (
     <Layout>
       <SubLayout>{page}</SubLayout>
