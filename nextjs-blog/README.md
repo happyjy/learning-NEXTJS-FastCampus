@@ -44,6 +44,16 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
     - [상태는 유지하면서 URL 만 바꾸고 싶은 경우?](#%EC%83%81%ED%83%9C%EB%8A%94-%EC%9C%A0%EC%A7%80%ED%95%98%EB%A9%B4%EC%84%9C-url-%EB%A7%8C-%EB%B0%94%EA%BE%B8%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EA%B2%BD%EC%9A%B0)
   - [url을 바꾸는 3가지 방식](#url%EC%9D%84-%EB%B0%94%EA%BE%B8%EB%8A%94-3%EA%B0%80%EC%A7%80-%EB%B0%A9%EC%8B%9D)
   - [Shallow Routing 정리](#shallow-routing-%EC%A0%95%EB%A6%AC)
+- [Part2. 1-7. Next.js 기본 6API Routes](#part2-1-7-nextjs-%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB-6api-routes)
+  - [API란?](#api%EB%9E%80)
+    - [실제 서비스 예시](#%EC%8B%A4%EC%A0%9C-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%98%88%EC%8B%9C)
+  - [Next.js 가 제공하는 API Routes](#nextjs-%EA%B0%80-%EC%A0%9C%EA%B3%B5%ED%95%98%EB%8A%94-api-routes)
+  - [Dynamic API Routes](#dynamic-api-routes)
+  - [Client 사이드 Data Fetching](#client-%EC%82%AC%EC%9D%B4%EB%93%9C-data-fetching)
+  - [Routing 에서 다뤘던 여러 Slug 활용법 적용 가능](#routing-%EC%97%90%EC%84%9C-%EB%8B%A4%EB%A4%98%EB%8D%98-%EC%97%AC%EB%9F%AC-slug-%ED%99%9C%EC%9A%A9%EB%B2%95-%EC%A0%81%EC%9A%A9-%EA%B0%80%EB%8A%A5)
+  - [API Middlewares](#api-middlewares)
+  - [Response](#response)
+  - [API Routes 정리](#api-routes-%EC%A0%95%EB%A6%AC)
 
 <!-- /TOC -->
 
@@ -306,3 +316,68 @@ Part2.1-3_Next.js_기본_3(Pages_Layout_Image)
 - 다중 slug -> [user]/[info].js / [...slug].js
 - 옵셔널 slug -> [[...slug]].js
 - Shallow Routing -> router.push(url, undefined, {shallow:true})
+
+# Part2. 1-7. Next.js 기본 6(API Routes)
+
+## API란?
+
+- Application Programming Interface
+  - 응용 프로그래밍 인터페이스
+  - 컴퓨터나 컴퓨터 프로그램 사이의 연결
+- Frontend Service - Backend Service 간의 연결
+  - Frontend Service는 고객과 닿아있고,
+  - Backend Service는 DB에 닿아있다.
+- 고객이 DB에 접근하기 위해 FE는 BE와 연결되어야하고 이때 API를 활용한다.
+  - BE가 제공해주는 API를 통해 DB의 내용을 활용할 수 있다.
+
+### 실제 서비스 예시
+
+- 커머스 사이트 - 개발자 도구 - 네트워크 탭
+- 어떤 API를 호출하는지? 2*cm / 마켓 컬*
+
+## Next.js 가 제공하는 API Routes
+
+- pages/api/\*
+
+## Dynamic API Routes
+
+- pages/api/user-info/[uid].js
+
+## Client 사이드 Data Fetching
+
+```
+fetch('/api/user')
+.then((res) => res.json())
+.then((data) => { 처리 })
+```
+
+## Routing 에서 다뤘던 여러 Slug 활용법 적용 가능
+
+- 다중 Route
+
+```
+/api/post/create.js
+/api/post/[pid].js
+/api/post/[...slug].js
+```
+
+## API Middlewares
+
+- 내장 Middleware의 기능
+- req.cookies / req.query ...
+- req / res 관련 다양한 기능들은 Middleware 들을 활용할 수 있다.
+  - ex) CORS (교차 출처 리소스 공유)
+
+## Response
+
+- res.status(code)
+- res.json(body): serializable object
+- res.redirect(code, url)
+- res.send(body) : string / object / Buffer
+
+## API Routes 정리
+
+- API란? -> 프로그램 간의 연결
+- API Routes -> Routing과 동일(파일 기반 / Dynamic)
+- Middlewares -> 기본으로 제공되는 built in외 추가 가능
+- Response -> status / json / redirect / send...
