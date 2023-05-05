@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function SubLayout({ children }) {
   return (
@@ -6,5 +6,5 @@ export default function SubLayout({ children }) {
       <Link href="/">Home 으로</Link>
       {children}
     </div>
-  )
+  );
 }

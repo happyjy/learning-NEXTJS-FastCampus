@@ -1,5 +1,5 @@
-import Layout from 'components/Layout'
-import SubLayout from 'components/SubLayout'
+import Layout from 'components/Layout';
+import SubLayout from 'components/SubLayout';
 
 // url -> http://localhost:3000/product/first-item
 
@@ -8,7 +8,7 @@ export default function firstItem() {
     <>
       <h1>firstItem</h1>
     </>
-  )
+  );
 }
 
 firstItem.getLayout = function getLayout(page) {
@@ -16,5 +16,5 @@ firstItem.getLayout = function getLayout(page) {
     <Layout>
       <SubLayout>{page}</SubLayout>
     </Layout>
-  )
-}
+  );
+};

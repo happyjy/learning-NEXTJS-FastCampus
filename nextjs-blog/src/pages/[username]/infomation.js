@@ -1,5 +1,5 @@
-import Layout from 'components/Layout'
-import SubLayout from 'components/SubLayout'
+import Layout from 'components/Layout';
+import SubLayout from 'components/SubLayout';
 
 // url -> http://localhost:3000/jyoon/infomation
 
@@ -8,7 +8,7 @@ export default function UsernameInfomation() {
     <>
       <h1>UsernameInfomation</h1>
     </>
-  )
+  );
 }
 
 UsernameInfomation.getLayout = function getLayout(page) {
@@ -16,5 +16,5 @@ UsernameInfomation.getLayout = function getLayout(page) {
     <Layout>
       <SubLayout>{page}</SubLayout>
     </Layout>
-  )
-}
+  );
+};

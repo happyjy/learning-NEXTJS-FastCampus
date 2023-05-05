@@ -1,14 +1,14 @@
-import Layout from 'components/Layout'
-import SubLayout from 'components/SubLayout'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Layout from 'components/Layout';
+import SubLayout from 'components/SubLayout';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 // url -> http://localhost:3000/cart/2023/05/05
 // url -> http://localhost:3000/cart <- ⭐️ 접속시 페이지에 접속하게 하려면 "/cart/[[...date]].js" 이렇게 파일을 만들어야 합니다.
 
 export default function CartDateSlug() {
-  const router = useRouter()
-  const { date } = router.query
+  const router = useRouter();
+  const { date } = router.query;
 
   return (
     <>
@@ -18,7 +18,7 @@ export default function CartDateSlug() {
       <br />
       <button onClick={() => router.push('/cart/2023/05/06')}>23/05/06</button>
     </>
-  )
+  );
 }
 
 CartDateSlug.getLayout = function getLayout(page) {
@@ -26,5 +26,5 @@ CartDateSlug.getLayout = function getLayout(page) {
     <Layout>
       <SubLayout>{page}</SubLayout>
     </Layout>
-  )
-}
+  );
+};

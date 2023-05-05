@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
-import Layout from '../components/Layout'
-import SubLayout from '../components/SubLayout'
+import { useEffect, useState } from 'react';
+import Layout from '../components/Layout';
+import SubLayout from '../components/SubLayout';
 
 /* 
   ⭐️point: CSR(Client Side Render) 설명
@@ -13,19 +13,19 @@ import SubLayout from '../components/SubLayout'
 */
 
 export default function CSR() {
-  const [time, setTime] = useState()
+  const [time, setTime] = useState();
 
   useEffect(() => {
-    console.log('client')
-    setTime(new Date().toISOString())
-  }, [])
+    console.log('client');
+    setTime(new Date().toISOString());
+  }, []);
 
   return (
     <>
       <h1 className="title">{time}</h1>
       <label>csr 예시 페이지 입니다.</label>
     </>
-  )
+  );
 }
 
 CSR.getLayout = function getLayout(page) {
@@ -33,5 +33,5 @@ CSR.getLayout = function getLayout(page) {
     <Layout>
       <SubLayout>{page}</SubLayout>
     </Layout>
-  )
-}
+  );
+};

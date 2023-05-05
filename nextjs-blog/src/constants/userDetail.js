@@ -3,4 +3,4 @@ export const userDetail = {
   age: 34,
   height: 174,
   weight: 74,
-}
+};

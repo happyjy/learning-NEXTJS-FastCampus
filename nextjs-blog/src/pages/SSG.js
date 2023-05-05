@@ -1,5 +1,5 @@
-import Layout from '../components/Layout'
-import SubLayout from '../components/SubLayout'
+import Layout from '../components/Layout';
+import SubLayout from '../components/SubLayout';
 
 /* 
   ⭐️point: SSG(Static-Site Generation)설명
@@ -16,11 +16,11 @@ import SubLayout from '../components/SubLayout'
       - 블로그와 같이 변경되기 전에 계속 같은 내용이라면 build시 static하게 서버에서 만들어 놓으면 서버에 부하가 훨씬 덜하게 서빙할 수 있다.
 */
 export async function getStaticProps() {
-  console.log('--- server')
+  console.log('--- server');
   return {
     //⭐️ step-1
     props: { time: new Date().toISOString() },
-  }
+  };
 }
 
 export default function SSG({ time }) {
@@ -29,7 +29,7 @@ export default function SSG({ time }) {
       <h1 className="title">{time}</h1>
       <label>ssg 예시 페이지 입니다.</label>
     </>
-  )
+  );
 }
 
 SSG.getLayout = function getLayout(page) {
@@ -37,5 +37,5 @@ SSG.getLayout = function getLayout(page) {
     <Layout>
       <SubLayout>{page}</SubLayout>
     </Layout>
-  )
-}
+  );
+};

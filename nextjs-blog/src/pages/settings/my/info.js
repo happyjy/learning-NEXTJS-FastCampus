@@ -1,22 +1,22 @@
-import Layout from 'components/Layout'
-import SubLayout from 'components/SubLayout'
-import { useRouter } from 'next/router'
-import { useState } from 'react'
+import Layout from 'components/Layout';
+import SubLayout from 'components/SubLayout';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 // url -> http://localhost:3000/settings/my/info
 
 export async function getServerSideProps() {
-  console.log('###server###')
+  console.log('###server###');
 
   return {
     props: {},
-  }
+  };
 }
 
 export default function MyInfo() {
-  const router = useRouter()
-  const [clicked, setClicked] = useState(false)
-  const { status = 'initial' } = router.query
+  const router = useRouter();
+  const [clicked, setClicked] = useState(false);
+  const { status = 'initial' } = router.query;
   return (
     <>
       <h1 className="title">My Info</h1>
@@ -32,9 +32,9 @@ export default function MyInfo() {
       */}
       <button
         onClick={() => {
-          alert('edit')
-          setClicked(true)
-          location.replace('/settings/my/info?status=editing')
+          alert('edit');
+          setClicked(true);
+          location.replace('/settings/my/info?status=editing');
         }}
       >
         edit(replace)
@@ -50,9 +50,9 @@ export default function MyInfo() {
       */}
       <button
         onClick={() => {
-          alert('edit')
-          setClicked(true)
-          router.push('/settings/my/info?status=editing')
+          alert('edit');
+          setClicked(true);
+          router.push('/settings/my/info?status=editing');
         }}
       >
         edit(push)
@@ -68,17 +68,17 @@ export default function MyInfo() {
       */}
       <button
         onClick={() => {
-          alert('edit')
-          setClicked(true)
+          alert('edit');
+          setClicked(true);
           router.push('/settings/my/info?status=editing', undefined, {
             shallow: true,
-          })
+          });
         }}
       >
         edit(shallow)
       </button>
     </>
-  )
+  );
 }
 
 MyInfo.getLayout = function getLayout(page) {
@@ -86,5 +86,5 @@ MyInfo.getLayout = function getLayout(page) {
     <Layout>
       <SubLayout>{page}</SubLayout>
     </Layout>
-  )
-}
+  );
+};
