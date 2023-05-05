@@ -41,7 +41,7 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
     - [옵셔널 slug](#%EC%98%B5%EC%85%94%EB%84%90-slug)
   - [Routing 방법 2가지](#routing-%EB%B0%A9%EB%B2%95-2%EA%B0%80%EC%A7%80)
   - [Shallow Routing](#shallow-routing)
-  - [상태는 유지하면서 URL 만 바꾸고 싶은 경우?](#%EC%83%81%ED%83%9C%EB%8A%94-%EC%9C%A0%EC%A7%80%ED%95%98%EB%A9%B4%EC%84%9C-url-%EB%A7%8C-%EB%B0%94%EA%BE%B8%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EA%B2%BD%EC%9A%B0)
+    - [상태는 유지하면서 URL 만 바꾸고 싶은 경우?](#%EC%83%81%ED%83%9C%EB%8A%94-%EC%9C%A0%EC%A7%80%ED%95%98%EB%A9%B4%EC%84%9C-url-%EB%A7%8C-%EB%B0%94%EA%BE%B8%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EA%B2%BD%EC%9A%B0)
   - [url을 바꾸는 3가지 방식](#url%EC%9D%84-%EB%B0%94%EA%BE%B8%EB%8A%94-3%EA%B0%80%EC%A7%80-%EB%B0%A9%EC%8B%9D)
   - [Shallow Routing 정리](#shallow-routing-%EC%A0%95%EB%A6%AC)
 
@@ -288,7 +288,7 @@ Part2.1-3_Next.js_기본_3(Pages_Layout_Image)
 - getServerSideProps / getStaticProps 등을 다시 실행시키지 않고,
 - 현재 상태를 잃지 않고 url을 바꾸는 방법
 
-## 상태는 유지하면서 URL 만 바꾸고 싶은 경우?
+### 상태는 유지하면서 URL 만 바꾸고 싶은 경우?
 
 - 사용자가 어떤 동작을 했고, 그 기록을 query로 남기고 싶을때
   - query로 남기면 사용자가 새로고침을 해도 유지된다.
@@ -296,9 +296,9 @@ Part2.1-3_Next.js_기본_3(Pages_Layout_Image)
 
 ## url을 바꾸는 3가지 방식
 
-- location.replace(“url”): 로컬 state 유지 안됨(리렌더)
-- router.push(url): 로컬 state 유지 / data fetching은 일어남
-- router.push(url, as, { shallow: true }): 로컬 state 유지 / data fetching [x]
+1. location.replace(“url”): ⭐️ 로컬 state 유지 안됨(= 리렌더) / ⭐️ data fetching은 일어남
+2. router.push(url): ⭐️ 로컬 state 유지 / ⭐️ data fetching은 일어남
+3. router.push(url, as, { shallow: true }): ⭐️ 로컬 state 유지 / ⭐️ data fetching [x]
 
 ## Shallow Routing 정리
 
