@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 /* 
   ⭐️point: SSR 설명
@@ -10,15 +10,15 @@ import Link from "next/link";
       - 서버에서 데이터를 가지고 오고 페이지로 전달하는 역할을 한다.
 */
 export async function getServerSideProps() {
-  console.log("--- server"); // 여기 로그는 서버를 실행한 terminal에서 보인다.(서버 실행 방법 두 가지 yarn dev, yarn star)
+  console.log('--- server') // 여기 로그는 서버를 실행한 terminal에서 보인다.(서버 실행 방법 두 가지 yarn dev, yarn star)
   return {
     //⭐️ step-1
     props: { time: new Date().toISOString() },
-  };
+  }
 }
 
 export default function Home({ time }) {
-  console.log("time: ", time);
+  console.log('time: ', time)
   //⭐️ step-2
   return (
     <div>
@@ -37,5 +37,5 @@ export default function Home({ time }) {
         </h1>
       </main>
     </div>
-  );
+  )
 }

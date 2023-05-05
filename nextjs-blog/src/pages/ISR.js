@@ -1,5 +1,5 @@
-import Layout from "../components/Layout";
-import SubLayout from "../components/SubLayout";
+import Layout from '../components/Layout'
+import SubLayout from '../components/SubLayout'
 
 /* 
   ⭐️point: ISR (Incremental Static Regeneration)
@@ -10,12 +10,12 @@ import SubLayout from "../components/SubLayout";
     - ISR을 담당하는 함수 getStaticProps with revalidate
 */
 export async function getStaticProps() {
-  console.log("--- server");
+  console.log('--- server')
   return {
     //⭐️ step-1
     props: { time: new Date().toISOString() },
     revalidate: 1,
-  };
+  }
 }
 
 export default function ISR({ time }) {
@@ -24,7 +24,7 @@ export default function ISR({ time }) {
       <h1 className="title">{time}</h1>
       <label>isr 예시 페이지 입니다.</label>
     </>
-  );
+  )
 }
 
 // ISR.getLayout = function getLayout(page) {

@@ -7,6 +7,9 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
   - [Next.js 프로젝트 띄워보기](#nextjs-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%9D%84%EC%9B%8C%EB%B3%B4%EA%B8%B0)
   - [package 설치](#package-%EC%84%A4%EC%B9%98)
   - [project 실행](#project-%EC%8B%A4%ED%96%89)
+- [Part2. 1-1 Next.js 기본 1프레임워크 구조](#part2-1-1-nextjs-%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB-1%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3-%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9)
+  - [Commerce 예제를 살펴보자](#commerce-%EC%98%88%EC%A0%9C%EB%A5%BC-%EC%82%B4%ED%8E%B4%EB%B3%B4%EC%9E%90)
+  - [Commerce 프로젝트는?](#commerce-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%8A%94)
 - [Part2. 1-2. Next.js 기본 2Data Fetching](#part2-1-2-nextjs-%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB-2data-fetching)
   - [학습 branch](#%ED%95%99%EC%8A%B5-branch)
   - [DATA Fetching](#data-fetching)
@@ -62,6 +65,23 @@ yarn
 yarn dev
 
 ```
+
+# Part2. 1-1 Next.js 기본 1(프레임워크 구조)
+
+## Commerce 예제를 살펴보자
+
+```
+git clone https://github.com/vercel/commerce.git
+yarn
+yarn build yarn start
+```
+
+## Commerce 프로젝트는?
+
+- Typescript로 되어있고
+- Turbo 로 mono repo를 관리하고 있고
+- 4개의 extension을 recommendation 으로 정해뒀고
+- yarn build 후에 yarn start 로 실행해볼 수 있다
 
 # Part2. 1-2. Next.js 기본 2(Data Fetching)
 
@@ -158,8 +178,21 @@ Part2.1-3_Next.js_기본_3(Pages_Layout_Image)
 ## nextjs-blog 프로젝트 커스텀
 
 - commerce 프로젝트의 prettier 설정을 그대로 가져와보자
-  - yarn add -D prettier - .prettierrc
-  - .prettierignore
+
+  - yarn add -D prettier
+  - .prettierrc, .prettierignore 추가
+  - .prettierrc code
+
+    ```
+      {
+        "semi": false,
+        "singleQuote": true,
+        "tabWidth": 2,
+        "useTabs": false
+      }
+
+    ```
+
   - prettier-fix 명령 추가
 
 ## Nested routes
