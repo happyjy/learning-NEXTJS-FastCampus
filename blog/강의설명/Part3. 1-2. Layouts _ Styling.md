@@ -58,8 +58,11 @@ vs
 ## 5.Metadata
 
 - 웹 문서로서 제공하는 메타 정보들
-- <title>제목</title>
+  - <title>제목</title>
 - https://www.google.com/search?q=react
+  - 구글에서 react를 검색한 url주소이다.
+  - 검색 목록중에 첫번째 검색 결과에 들어갔을때에 <title> 태그에 작성된게 구글 검색 목록 리스트에 반여이 된다.
+    - 즉 구글 검색 엔진이 사이트의 title 메타 정보를 크롤링해서 검색 목록에 보여준다.
 
 ## 6.Head Component, Script Component
 
@@ -69,7 +72,9 @@ vs
   - third party script(ex. google-analytics..)
 - Script Component
   - strategy
+    - load하는 stript를 어떤 전략으로 load할지 정할 수 있다.
   - onLoad
+    - 페이지가 load가 끝났을때 어떤 동작을 실행할 수 있다.
 
 ## 7.Layout
 
