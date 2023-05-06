@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -51,6 +52,14 @@ export default function Home() {
             </p>
           </a>
         </div>
+
+        {/* <img src="/images/jyoon.png" alt="jyoon" width={144} height={144}></img> */}
+        <Image
+          src="/images/jyoon.png"
+          alt="jyoon"
+          width={140}
+          height={140}
+        ></Image>
       </main>
 
       <footer>
