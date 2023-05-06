@@ -11,6 +11,8 @@
     - [Client Side Navigate](#client-side-navigate)
   - [Code Splitting](#code-splitting)
   - [Prefetching](#prefetching)
+  - [Link Component](#link-component)
+  - [정리: Link Component / Client-side Navigate](#%EC%A0%95%EB%A6%AC-link-component--client-side-navigate)
 
 <!-- /TOC -->
 
@@ -84,3 +86,16 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 - <Link> 컴포넌트를 이용하면, ⭐️ Viewport에 Link 컴포넌트가 노출되었을 때
   - href 로 연결된 페이지의 chunk를 로드한다.
 - 이를 통해 성능을 최적화한다.
+
+## Link Component
+
+- 현재시점(23.05.06)에서는 Link에 class를 주어도 스타일이 먹는다.
+- ~~본 서비스 외부 링크로 연결 할 때는 <a> tag 만 쓰면 됨~~
+- ~~Link Component에 스타일을 줄 때는 <a> tag 에 줘야 함~~
+
+## 정리: Link Component / Client-side Navigate
+
+- 프레임워크 익히는 최상의 방법 -> 실제 서비스를 프레임워크로 만들기
+- Link component -> Next.js 에서 제공하는 링크 기능
+- Client side Navigate -> url로 접근하는 것과 달리 JS 상에서 변 경
+- Prefetching -> Viewport 내 Link 페이지를 미리 페칭
