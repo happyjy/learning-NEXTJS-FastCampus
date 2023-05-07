@@ -79,7 +79,9 @@ vs
 ## 7.Layout
 
 - 공통 컴포넌트로 만들고
-- ./layout.module.css 라는 CSS 모듈을 만들어 보자
+  - index.js파일에 파일에서 사용하는 스타일링 "<style jsx>", 전역에서 사용하는 스타일링"<style jsx global>"을 제공하고 있다.
+- 모듈 css 하는 방법이 있다.
+  "./layout.module.css 라는 CSS 모듈을 만들어 보자"
 
 - .container 클래스 스타일을 만들고
 - Layout 에서 해당 클래스네임을 사용하면 css가 적용
