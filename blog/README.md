@@ -6,7 +6,6 @@
   - [연습 프로젝트블로그](#%EC%97%B0%EC%8A%B5-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%B8%94%EB%A1%9C%EA%B7%B8)
   - [블로그](#%EB%B8%94%EB%A1%9C%EA%B7%B8)
   - [프로젝트 만들기](#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0)
-  - [prettier 설정도](#prettier-%EC%84%A4%EC%A0%95%EB%8F%84)
   - [Link Component](#link-component)
     - [Client Side Navigate](#client-side-navigate)
   - [Code Splitting](#code-splitting)
@@ -50,21 +49,26 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 ## 프로젝트 만들기
 
 ```bash
-
+yarn create next-app blog --example "https://github.com/vercel/next- learn/tree/master/basics/learn-starter"
 ```
 
 - vercel 아래 브렌치에 더 많은 예시가 있다.
+
   - https://github.com/vercel/next-learn/tree/master/basics
 
-## prettier 설정도
+- prettier 설정
 
-- Pages 만들기 pages/posts/first-post.js 첫번째 글로 이동하기
+- Pages 만들기
+- pages/posts/first-post.js
+- 첫번째 글로 이동하기
 
 ## Link Component
 
-- <a href=”/posts/first-post”>첫번째 글</a>
+- `<a href=”/posts/first-post”>첫번째 글</a>`
   - 브라우저를 refresh와 한것과 같이 파일들을 받는다.(dev tool > next work 확인)
-- <Link href=”/posts/first-post”><a>첫번째 글</a></Link> 두 방식의 차이
+- `<Link href=”/posts/first-post”><a>첫번째 글</a></Link>`
+
+- 두 방식의 차이
   - Link로 설정한 페이지에서 필요한 것만 받는다.
   - 페이지를 이동할때 최적화가 있다.
 
@@ -90,8 +94,8 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 ## Link Component
 
 - 현재시점(23.05.06)에서는 Link에 class를 주어도 스타일이 먹는다.
-- ~~본 서비스 외부 링크로 연결 할 때는 <a> tag 만 쓰면 됨~~
-- ~~Link Component에 스타일을 줄 때는 <a> tag 에 줘야 함~~
+- ~~본 서비스 외부 링크로 연결 할 때는 <a> tag 만 쓰면 됨(23.05.07 기준 내용 deprecated)~~
+- ~~Link Component에 스타일을 줄 때는 <a> tag 에 줘야 함(23.05.07 기준 내용 deprecated)~~
 
 ## 정리: Link Component / Client-side Navigate
 

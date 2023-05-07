@@ -1,18 +1,3 @@
-<!-- TOC -->
-
-- [Next.js 연습 2 - Layouts / Styling](#nextjs-%EC%97%B0%EC%8A%B5-2---layouts--styling)
-  - [public](#public)
-  - [Image Component](#image-component)
-  - [Image Component](#image-component)
-  - [Metadata](#metadata)
-  - [Head Component, Script Component](#head-component-script-component)
-  - [Layout](#layout)
-  - [Global CSS](#global-css)
-  - [스타일 추가](#%EC%8A%A4%ED%83%80%EC%9D%BC-%EC%B6%94%EA%B0%80)
-  - [Layouts / Styling 정리](#layouts--styling-%EC%A0%95%EB%A6%AC)
-
-<!-- /TOC -->
-
 # Next.js 연습 2 - Layouts / Styling
 
 ## 1.public
@@ -58,10 +43,14 @@ vs
 ## 5.Metadata
 
 - 웹 문서로서 제공하는 메타 정보들
-  - <title>제목</title>
+
+  ```
+    - <title>제목</title>
+  ```
+
 - https://www.google.com/search?q=react
   - 구글에서 react를 검색한 url주소이다.
-  - 검색 목록중에 첫번째 검색 결과에 들어갔을때에 <title> 태그에 작성된게 구글 검색 목록 리스트에 반여이 된다.
+  - 검색 목록중에 첫번째 검색 결과에 들어갔을때에 `<title>` 태그에 작성된게 구글 검색 목록 리스트에 반여이 된다.
     - 즉 구글 검색 엔진이 사이트의 title 메타 정보를 크롤링해서 검색 목록에 보여준다.
 
 ## 6.Head Component, Script Component
@@ -79,7 +68,7 @@ vs
 ## 7.Layout
 
 - 공통 컴포넌트로 만들고
-  - index.js파일에 파일에서 사용하는 스타일링 "<style jsx>", 전역에서 사용하는 스타일링"<style jsx global>"을 제공하고 있다.
+  - index.js파일에 파일에서 사용하는 스타일링 `<style jsx>`, 전역에서 사용하는 스타일링`<style jsx global>`을 제공하고 있다.
 - 모듈 css 하는 방법이 있다.
   "./layout.module.css 라는 CSS 모듈을 만들어 보자"
 
@@ -96,12 +85,13 @@ vs
 
 ## 9.스타일 추가
 
-- components/layout.module.css 에 스타일 추가
-- styles/utils.module.css 생성
-- components/Layout.js 보강
-- pages/index.js 변경
-
-  https://nextjs.org/learn/basics/assets-metadata-css/polishing-layout
+- 스타일 추가 방법
+  - [next.js 공식 문서에](https://nextjs.org/learn/basics/assets-metadata-css/polishing-layout)에 1,2 번째 방법에 대한 스타일 추가 방법, 코드가 있다.
+  1. components/layout.module.css 에 스타일 추가
+  2. styles/utils.module.css 생성
+- 결과
+  - components/Layout.js 보강
+  - pages/index.js 변경
 
 ## 10.Layouts / Styling 정리
 

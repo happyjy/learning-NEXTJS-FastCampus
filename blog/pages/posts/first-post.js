@@ -1,6 +1,8 @@
 import Layout from '../components/Layout';
 import Head from 'next/head';
 
+// http://localhost:3000/posts/first-post
+
 export default function FirstPost() {
   return (
     <Layout>
