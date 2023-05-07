@@ -224,6 +224,8 @@ Part2.1-3_Next.js_기본_3(Pages_Layout_Image)
 
 ## jsconfig.json
 
+- baseUrl 설정으로 import시 상대 주소말고 root를 baseUrl설정한 주소로 접근한다.
+
 ```
 { "compilerOptions": { "baseUrl": "src" } }
 ```
