@@ -91,8 +91,8 @@ vs
 - pages/\_app.js 만들고
 - styles/global.css 만들고 전역으로 적용할 스타일을 정의하고
 - \_app.js 에서 import ‘../styles/global.css’ 해보자
-
-- https://nextjs.org/learn/basics/assets-metadata-css/global-styles
+  - 아래 주소에 global로 설정할 css가 있다.
+  - https://nextjs.org/learn/basics/assets-metadata-css/global-styles
 
 ## 9.스타일 추가
 
