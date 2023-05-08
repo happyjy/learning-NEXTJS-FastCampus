@@ -37,7 +37,7 @@
 - 함수를 import 하지 않거나
 - postData를 page에서 props로 받지 않거나
 
-## \*.md 파일을 해석하기 위해서 도구 설치
+## \*.md 파일을 해석해서 html로 변경하기!
 
 ```
 yarn add remark remark-html
@@ -57,10 +57,13 @@ https://nextjs.org/learn/basics/dynamic-routes/render-markdown
 yarn add date-fns
 ```
 
-- parseISO
-- format
+- 아래 두개의 객체 (위 패키지의)
+  - parseISO
+  - format
 
-## index.js 에 노출되는 글 목록 폴리싱(polishing)
+## index.js에 노출되는 글 목록, 글 상세 폴리싱(polishing)
+
+- https://nextjs.org/learn/basics/dynamic-routes/polishing-post-page
 
 - https://nextjs.org/learn/basics/dynamic-routes/polishing-index-page
 
