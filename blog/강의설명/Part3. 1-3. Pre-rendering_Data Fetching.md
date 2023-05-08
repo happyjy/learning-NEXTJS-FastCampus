@@ -71,6 +71,18 @@ https://www.google.com/search?q=js+sort
 - SSR로 구현: getServerSideProps 활용
   - ⭐️ build 이후 app 실행하면(yarn build, yarn start) refresh할때 마다 getServerSideProps 함수가 실행된다.
 - CSR로 구현: API Routes 활용
+  - 현재 md파일을 읽는 모듈이 동작하고 있다.
+    - 이 모듈은 노드에서 동작한다. 그래서 ⭐️ 클라이언트에서 'fs' 모듈을 읽으려고 하면 에러가 난다.
+    - 그래서 클라이언트에서 서버를 사용하는 방식을 활용할 것이다. -> 바로 `api 호출`
+      - ⭐️ server side에서 서버 호출 설정 방법 2단계
+        1. client 부분
+        - fetch 모듈에 호출할 api url 작성
+        - api response 받는 부분을 promise의 then 함수를 활용해서 받는다.
+        2. server 부분
+        - fetch 모듈에 호출할 api url 작성한대로 폴더, 파일 생성
+        - handler 함수를 작성한다.
+    - tip
+      - getSortedPostsData 모듈을 클라이언트에서 import 한뒤 사용하지 않아도 import 했을때 fs 파일을 읽으려고 시도해서 에러가 난다.
 
 ## 9. Data를 가져오는 함수 getSortedPostsData 의 확장
 

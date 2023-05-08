@@ -3,19 +3,18 @@ import { useEffect, useState } from 'react';
 import Layout, { siteTitle } from './components/Layout';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
-import { getSortedPostsData } from '../lib/posts';
-// import { getSortedPostsData } from '../lib/post';
+// import { getSortedPostsData } from '../lib/posts';
 
 /* SSG 구현 */
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  console.log('allPostsData: ', allPostsData);
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
+// export async function getStaticProps() {
+//   const allPostsData = getSortedPostsData();
+//   console.log('allPostsData: ', allPostsData);
+//   return {
+//     props: {
+//       allPostsData,
+//     },
+//   };
+// }
 
 /* SSR 구현 */
 // export async function getServerSideProps() {
@@ -28,19 +27,18 @@ export async function getStaticProps() {
 //   };
 // }
 
-export default function Home({ allPostsData }) {
-  console.log('allPostsData: ', allPostsData);
+export default function Home(/* { allPostsData } */) {
   console.info('🔴 index.js');
-  // const [allPostsData, setAllPostsData] = useState([]);
+  const [allPostsData, setAllPostsData] = useState([]);
 
-  // useEffect(() => {
-  //   fetch('/api/posts')
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log('data.PostsData: ', data.allPostsData);
-  //       setAllPostsData(data.allPostsData);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch('/api/posts')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('data.PostsData: ', data.allPostsData);
+        setAllPostsData(data.allPostsData);
+      });
+  }, []);
 
   return (
     <Layout home>
