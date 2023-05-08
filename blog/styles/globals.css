@@ -25,7 +25,14 @@ h2,
 p,
 ul {
   margin: 0;
+}
+
+p {
   border: 1px solid salmon;
+}
+
+div {
+  border: 1px solid blueviolet;
 }
 
 ul {
