@@ -1,3 +1,18 @@
+<!-- TOC -->
+
+- [Next.js 연습 3 1 Pre-rendering / Data Fetching](#nextjs-%EC%97%B0%EC%8A%B5-3-1-pre-rendering--data-fetching)
+  - [질릴만큼 반복되는 Pre-rendering / Data Fetching](#%EC%A7%88%EB%A6%B4%EB%A7%8C%ED%81%BC-%EB%B0%98%EB%B3%B5%EB%90%98%EB%8A%94-pre-rendering--data-fetching)
+  - [Next.js를 활용하면 페이지별로 Pre-rendering 방식을 선택할 수 있다.](#nextjs%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%98%EB%A9%B4-%ED%8E%98%EC%9D%B4%EC%A7%80%EB%B3%84%EB%A1%9C-pre-rendering-%EB%B0%A9%EC%8B%9D%EC%9D%84-%EC%84%A0%ED%83%9D%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8B%A4)
+  - [SSG를 사용하면 좋은 페이지](#ssg%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%A9%B4-%EC%A2%8B%EC%9D%80-%ED%8E%98%EC%9D%B4%EC%A7%80)
+  - [SSG를 사용하면 좋은 페이지 적용 여부 선택 기준](#ssg%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%A9%B4-%EC%A2%8B%EC%9D%80-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%81%EC%9A%A9-%EC%97%AC%EB%B6%80-%EC%84%A0%ED%83%9D-%EA%B8%B0%EC%A4%80)
+  - [SSG의 2가지 케이스](#ssg%EC%9D%98-2%EA%B0%80%EC%A7%80-%EC%BC%80%EC%9D%B4%EC%8A%A4)
+    - [다른 파일을 읽어와보자](#%EB%8B%A4%EB%A5%B8-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%9D%BD%EC%96%B4%EC%99%80%EB%B3%B4%EC%9E%90)
+  - [" —-- --- " 으로 감싸진 metadata를 읽어보자 YAML Front Matter](#---------%EC%9C%BC%EB%A1%9C-%EA%B0%90%EC%8B%B8%EC%A7%84-metadata%EB%A5%BC-%EC%9D%BD%EC%96%B4%EB%B3%B4%EC%9E%90-yaml-front-matter)
+  - [Data를 가져오는 함수 getSortedPostsData 의 확장](#data%EB%A5%BC-%EA%B0%80%EC%A0%B8%EC%98%A4%EB%8A%94-%ED%95%A8%EC%88%98-getsortedpostsdata-%EC%9D%98-%ED%99%95%EC%9E%A5)
+  - [정리 Pre-rendering / Data Fetching](#%EC%A0%95%EB%A6%AC-pre-rendering--data-fetching)
+
+<!-- /TOC -->
+
 # Next.js 연습 3 1 Pre-rendering / Data Fetching
 
 ## 1. (질릴만큼) 반복되는 Pre-rendering / Data Fetching
