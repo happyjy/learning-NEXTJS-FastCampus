@@ -70,6 +70,23 @@ yarn add date-fns
 ## getStaticPaths 가 반환하는 fallback의 의미?
 
 - fallback: false, true, ‘blocking’
+  - false: 없는 링크면 -> 없는 페이지가 나옴
+    - 빌드 할때는 없었는데 사용하다 보니 생긴 페이지에 대한 대응 옵션
+  - true: 없는 링크면 -> error
+    - Post를 렌더한다는 의미
+
+### fallback 3가지 옵션에 대한 의미
+
+- fallback: false
+  - 페이지가 없다면 404 not found가 나옴
+- fallback: true
+  - 페이지가 없다면 아래와 같은 문구가 나옴
+  ```
+  "Application error: a client-side exception has occurred (see the browser console for more information).
+  ```
+  - ⭐️ 하지만 md파일에 있는 주소로 접근하면 서버가 보여줄 md파일을 빌드에서 서빙하게 된다!
+- fallback: 'blocking'
+  - 페이지가 없다면 500 error 나옴
 
 ## 정리 - Dynamic Routes
 

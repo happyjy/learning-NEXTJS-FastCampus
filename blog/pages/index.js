@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
-import Layout, { siteTitle } from './components/Layout';
+// import { useEffect, useState } from 'react';
+import Layout, { siteTitle } from '../components/Layout';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
-import Date from './components/Date';
+import Date from '../components/Date';
 // import { getSortedPostsData } from '../lib/posts';
 
 /* SSG 구현 */
@@ -16,6 +16,40 @@ import Date from './components/Date';
 //     },
 //   };
 // }
+// export async function getStaticProps() {
+//   const response = await fetch('http://localhost:3000/api/posts');
+//   const json = await response.json();
+
+//   return {
+//     props: {
+//       allPostsData: json.allPostsData,
+//     },
+//   };
+// }
+
+/* 
+  ⭐️ SSR을 사용해야 하는 이유
+    - localhost:3000/api/posts에 접근하려면 서버를 띄워야 하기 때문이다. 
+    - 그래서 SSG 즉, build할때는 "getStaticProps"이 서버를 띄우지 않았기 때문에 api에 접근 할 수 없다. 
+*/
+export async function getServerSideProps() {
+  try {
+    console.log('🔴 index.js > getServerSideProps: ', getServerSideProps);
+    const response = await fetch('http://localhost:3000/api/posts');
+    console.log('🔴 index.js > response: ', response);
+    const json = await response.json();
+    console.log('🔴 index.js > json: ', json);
+  } catch (error) {
+    console.log('🔴🔴🔴🔴🔴🔴🔴🔴');
+    console.error('error: ', error);
+  }
+
+  return {
+    props: {
+      allPostsData: json.allPostsData,
+    },
+  };
+}
 
 /* SSR 구현 */
 // export async function getServerSideProps() {
@@ -28,18 +62,19 @@ import Date from './components/Date';
 //   };
 // }
 
-export default function Home(/* { allPostsData } */) {
+// export default function Home(/* { allPostsData } */) {
+export default function Home({ allPostsData }) {
   console.info('🔴 index.js');
-  const [allPostsData, setAllPostsData] = useState([]);
+  // const [allPostsData, setAllPostsData] = useState([]);
 
-  useEffect(() => {
-    fetch('/api/posts')
-      .then((res) => res.json())
-      .then((data) => {
-        console.log('data.PostsData: ', data.allPostsData);
-        setAllPostsData(data.allPostsData);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch('/api/posts')
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log('data.PostsData: ', data.allPostsData);
+  //       setAllPostsData(data.allPostsData);
+  //     });
+  // }, []);
 
   return (
     <Layout home>
