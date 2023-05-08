@@ -6,15 +6,27 @@ import Link from 'next/link';
 import { getSortedPostsData } from '../lib/posts';
 // import { getSortedPostsData } from '../lib/post';
 
-// # ssg
+/* SSG 구현 */
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
+  console.log('allPostsData: ', allPostsData);
   return {
     props: {
       allPostsData,
     },
   };
 }
+
+/* SSR 구현 */
+// export async function getServerSideProps() {
+//   const allPostsData = getSortedPostsData();
+//   console.log('getServerSideProps > allPostsData: ', allPostsData);
+//   return {
+//     props: {
+//       allPostsData,
+//     },
+//   };
+// }
 
 export default function Home({ allPostsData }) {
   console.log('allPostsData: ', allPostsData);

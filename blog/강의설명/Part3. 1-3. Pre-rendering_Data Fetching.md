@@ -66,7 +66,10 @@ https://www.google.com/search?q=js+sort
 ```
 
 - SSG로 구현: getStaticProps 활용
+  - build 이후 app 실행하면(yarn build, yarn start) refresh할때 마다 getStaticProps 함수가 실행되지 않는다.
+  - ⭐️ build할때 한번 실행된다.
 - SSR로 구현: getServerSideProps 활용
+  - ⭐️ build 이후 app 실행하면(yarn build, yarn start) refresh할때 마다 getServerSideProps 함수가 실행된다.
 - CSR로 구현: API Routes 활용
 
 ## 9. Data를 가져오는 함수 getSortedPostsData 의 확장
