@@ -8,7 +8,10 @@
 - ⭐️ 하지만 **getStaticProps** / **getStaticPaths** 등은 <u>client-side코드에 포함되지 않는다.</u>
   - 그렇기에 서버 사이드에서는 DB에 직접 접근하는 등 훨씬 자유도 높은 작업을 할 수 있다.
 
-## 2. API Routes
+## 2. ⭐️ API Routes
+
+- 아래 코드를 요청하는 코드는 Client side 에만 둬야 한다고 한다.
+- 현재 실습에서는 pages/post/write.js에 포함 되어 있다.
 
 ```
 export default function handler(req, res) {

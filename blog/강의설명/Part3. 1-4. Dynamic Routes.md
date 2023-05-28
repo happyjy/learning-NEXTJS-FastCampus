@@ -17,9 +17,9 @@
   - slug는 편의상 id로 하자
     - 이유는 저번시간에 posts 목록을 가져올때 id로 파일이름을 전달했던 걸 기억!
 
-## SSG 활용해서 다이나믹한 page들을 생성하려면?
+## ⭐️ SSG 활용해서 다이나믹한 page들을 생성하려면?
 
-- getStaticPaths가 필요하다.
+- ⭐️ getStaticPaths가 필요하다.
 - ⭐️ getStaticPaths는 생성해둬야 하는 페이지 정보를 배열로 반환해야 한다.
 - ⭐️ getStaticPaths는 getStaticProps와 함께 SSG를 페이지를 생성하기 위한 함수이다.
 

@@ -6,7 +6,7 @@
 
 - robots.txt (https://www.reddit.com/robots.txt)
   - 크롤러, 서치엔진이 해당 웹사이트에 어떤 파일을 읽고 읽지 못하게 하는 파일을 설정하는 파일이다.
-  - next.js는 이런 내용을 public에 두면 크롤러, 서치엔진이 robots파일에 접근 할 수 있따.
+  - ⭐️ next.js는 이런 내용을 public에 두면 크롤러, 서치엔진이 robots파일에 접근 할 수 있다.
 - images
 
 ## 2.Image Component

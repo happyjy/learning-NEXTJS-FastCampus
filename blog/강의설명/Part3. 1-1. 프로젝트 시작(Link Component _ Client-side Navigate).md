@@ -32,7 +32,7 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 - Automatic code splitting for faster page loads
   - next.js가 페이지 단위, 공통된 다위로 코르를 splitting한다.
 - Client-side routing with optimized prefetching
-- API Routes(with Serverless Functions)
+- API Routes(with Serverless Functions) -> Part.1-3 블로그 Pre-rendering_Data Fetching에서 실습
 - Development environment(with Fast Refresh)
 
 ## 연습 프로젝트(블로그)
