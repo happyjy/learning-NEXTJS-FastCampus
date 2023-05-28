@@ -33,7 +33,6 @@ export default function Write() {
           throw new Error('Fetch Error');
         })
         .then((data) => {
-          debugger;
           setShowLink(true);
           alert(data.message);
         })

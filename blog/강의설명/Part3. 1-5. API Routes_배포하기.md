@@ -33,16 +33,36 @@ export default function handler(req, res) {
 - pages/api/post/write.js API 추가
 - lib/posts.js 안에 writePost 함수 추가
 
-## 6. Fetch API
+## 4. Fetch API
 
 - https://developer.mozilla.org/en-US/docs/Web/API/fetch
-- fetch() promise는 HTTP error에 의해 reject 되지 않는다.
+  - fetch() promise는 HTTP error에 의해 reject 되지 않는다.
+  - 위 mdn에서 아래 문구에 나와 있는 내용
+    ```
+    A fetch() promise only rejects when a network error is encountered (which is usually when there's a permissions issue or similar). A fetch() promise does not reject on HTTP errors (404, etc.). Instead, a then() handler must check the Response.ok and/or Response.status properties.
+    ```
 
-## 7. Vercel 로 배포하기
+## 5. Vercel 로 배포하기
 
 - 준비물: github 계정 / 지금까지 만든 blog 코드
+- 프로젝트 리눅스 명령어로 복사하기
 
-## 8. 작업 순서
+```
+  cp -rf learning-NEXTJS-FastCampus/blog vercel-blog
+```
+
+```
+  - 위 명령어 실행 폴더 위치
+    - /Users/jaeyoon/DEV_learning
+
+  - learning-NEXTJS-FastCampus/blog 위치
+    - /Users/jaeyoon/DEV_learning/learning-NEXTJS-FastCampus/blog
+
+  - copy한 vercel-blog 폴더 위치
+    - /Users/jaeyoon/DEV_learning/vercel-blog
+```
+
+## 6. 작업 순서
 
 1. step1
 
@@ -74,13 +94,13 @@ export default function handler(req, res) {
 
 - https://vercel.com/new
 
-## 11. 이후에는 해당 repo main 브랜치에 변경사항을 푸시하면 Vercel이 알아서 서비스를 배포해준다.
+## 7. 이후에는 해당 repo main 브랜치에 변경사항을 푸시하면 Vercel이 알아서 서비스를 배포해준다.
 
 - PR을 올리면 Preview Mode까지 제공한다.
 
-## 12. 정리: API Routes / 배포하기
+## 8. 정리: API Routes / 배포하기
 
-API Routes -> 요청하는 코드는 Client side 에만 두자
-POST 요청 -> Post를 직접 write 하고 POST 해봄
-Vercel로 배포 -> 순서대로만 하면 너무 간단
-Main 브랜치 -> Push 하거나 PR을 올리면 배포됨
+- API Routes -> 요청하는 코드는 Client side 에만 두자
+- POST 요청 -> Post를 직접 write 하고 POST 해봄
+- Vercel로 배포 -> 순서대로만 하면 너무 간단
+- Main 브랜치 -> Push 하거나 PR을 올리면 배포됨
