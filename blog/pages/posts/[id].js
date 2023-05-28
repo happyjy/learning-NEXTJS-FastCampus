@@ -44,7 +44,6 @@ export default function Post({ postData }) {
   const router = useRouter();
 
   if (router.isFallback) {
-    debugger;
     return <div>Loading...</div>;
   }
 
